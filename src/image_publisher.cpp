@@ -20,7 +20,7 @@ int main(int argc, char** argv)
   auto pub = image_tx.advertise("camera/image", 1);
 
 //  auto img = cv::imread("dashing.png", CV_LOAD_IMAGE_COLOR);
-  auto img = cv::Mat{256, 256, CV_8UC3, cv::Scalar(255, 0, 0)};
+  auto img = cv::Mat{16, 16, CV_8UC3, cv::Scalar(255, 0, 0)};
   auto msg = cv_bridge::CvImage(std_msgs::msg::Header(), "bgr8", img).toImageMsg();
   rclcpp::WallRate loop_rate{500ms};
 
